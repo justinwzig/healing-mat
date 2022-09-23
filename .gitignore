@@ -2,7 +2,7 @@
 /.bundle
 /node_modules
 /vendor
-/assets
+#/assets
 
 .jekyll-cache
 .eslintcache

@@ -6,6 +6,9 @@ exclude:
   - LICENSE
   - Makefile
 
+include:
+  - assets/
+
 ### visible text ###
 
 title: Your awesome title
