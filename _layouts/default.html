@@ -1,3 +1,7 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}" class="antialiased">
 <head>
@@ -7,12 +11,25 @@
   {%- seo -%}
   <link rel="stylesheet" href="{% link /assets/css/app.css %}">
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans tracking-wider leading-normal">
+<body class="h-full bg-white-100 font-sans">
   {%- include header.html -%}
 
-  <main aria-label="Content">
-    {{ content }}
-  </main>
+  <div id="mobilecontainer" class="h-full flex flex-col">
+    <div id="beforecontainer" class="basis-4 flex-initial"></div>
+
+    <div class="basis-full h-screen bg-top bg-no-repeat bg-contain" style="background-image: url(/assets/img/green-mat-1.png)">
+      <div>
+        <img draggable="false" src="/assets/img/draggable-1.png" class="h-60 w-60"></img>
+      </div> 
+    </div>
+
+    <div id="aftercontainer"></div>
+
+    <main aria-label="Content">
+      {{ content }}
+    </main>
+
+  </div>
 
   {%- include footer.html -%}
 
