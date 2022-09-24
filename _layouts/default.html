@@ -4,32 +4,47 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}" class="antialiased">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
-  <link rel="stylesheet" href="{% link /assets/css/app.css %}">
-</head>
-<body class="h-full bg-white-100 font-sans">
-  {%- include header.html -%}
 
-  <div id="mobilecontainer" class="h-full flex flex-col">
-    <div id="beforecontainer" class="basis-4 flex-initial"></div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    {%- seo -%}
+    
+    <link rel="stylesheet" href="{% link /assets/css/app.css %}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+      $( function() {
+        $( "#draggable" ).draggable();
+      } );
+    </script>
+  </head>
 
-    <div class="basis-full h-screen bg-top bg-no-repeat bg-contain" style="background-image: url(/assets/img/green-mat-1.png)">
-      <div>
-        <img draggable="false" src="/assets/img/draggable-1.png" class="h-60 w-60"></img>
-      </div> 
+<body class=" bg-white-100 font-sans">
+    <div class="flex-auto ">
+      <div class="flex-auto flex-col justify-center content-center">
+        <div class="flex grow shrink-0 items-start">
+          <div class="flex grow shrink-0 self-start w-auto h-screen bg-top bg-no-repeat bg-contain" style="background-image: url(/assets/img/green-mat-1.png)">
+            <img class="invisible self-start" src="/assets/img/green-mat-1.png">
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div id="aftercontainer"></div>
+    <
+    <div id="draggable" class="h-60 w-60 bg-top bg-no-repeat bg-contain" style="background-image: url(/assets/img/draggable-1.png)">
+      <div id="containment-wrapper" class=" h-screen items-center">
+    </div>
 
     <main aria-label="Content">
       {{ content }}
     </main>
+  
 
-  </div>
 
   {%- include footer.html -%}
 
