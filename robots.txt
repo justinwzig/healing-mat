@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: /healing-mat/sitemap.xml
